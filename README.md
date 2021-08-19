@@ -10,3 +10,6 @@ apt install libreoffice-writer -y
 ```bash
 apk add libreoffice-writer
 ```
+* Windows
+
+Download from https://www.libreoffice.org/download/download/
