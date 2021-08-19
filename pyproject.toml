@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "doc2pdf"
-version = "0.1.0"
+version = "0.2.0"
 description = "A package to convert Doc files to PDF."
 authors = ["Silas Vasconcelos <silasvasconcelos@hotmail.com.br>"]
 license = "MIT"
