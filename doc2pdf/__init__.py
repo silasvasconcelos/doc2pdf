@@ -41,10 +41,14 @@ def get_office_cli_path():
         str: The path to the command line interface.
     """
     if is_windows():
-        return 'doc2pdf.exe'
+        raise NotImplementedError('Windows is not supported.')
     elif is_linux():
-        return 'doc2pdf'
+        if not os.path.exists('/usr/bin/soffice'):
+            raise Exception(f'Could not find LibreOffice. Is it installed?')
+        return '/usr/bin/soffice'
     elif is_osx():
+        if not os.path.exists('/Applications/LibreOffice.app/Contents/MacOS/soffice'):
+            raise Exception(f'Could not find LibreOffice.app. Is it installed?')
         return '/Applications/LibreOffice.app/Contents/MacOS/soffice'
     else:
         raise Exception('Unsupported platform')
