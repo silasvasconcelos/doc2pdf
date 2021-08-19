@@ -40,8 +40,10 @@ def get_office_cli_path():
     Returns:
         str: The path to the command line interface.
     """
-    if is_windows():
-        raise NotImplementedError('Windows is not supported.')
+    if is_windows():        
+        if not os.path.exists('C:\Program Files\LibreOffice\program\soffice.exe'):
+            raise Exception(f'Could not find LibreOffice. Is it installed?')
+        return 'C:\Program Files\LibreOffice\program\soffice'
     elif is_linux():
         if not os.path.exists('/usr/bin/soffice'):
             raise Exception(f'Could not find LibreOffice. Is it installed?')
